@@ -1,0 +1,71 @@
+<!-- Students: Our work lies in the js file. -->
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+
+    <!-- Our CSS style sheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+    <!-- javascript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+  </head>
+
+  <body>
+    <div id="wrapper">
+        <h1>Totally Trivial Oceanography Trivia!</h1>
+        
+        <button id="startButton">Start</button>
+        
+
+        <h2 id="timeRemaining">Time Remaining: <span id="timer"></span></h2>
+        
+        <div id="questionsSection">
+            <div class="question">
+            <h2>What are surface currents formed by?</h2>
+                <input type="radio" name="question1" value="incorrect"> the sun's gravity
+                <input type="radio" name="question1" value="correct"> Global winds
+                <input type="radio" name="question1" value="incorrect"> the moon's gravity
+                <input type="radio" name="question1" value="incorrect"> increased water density
+            </div>
+            <div class="question">
+            <h2>Streamlike movements of the water that occur at or near the surface of the ocean are called</h2>
+                <input type="radio" name="question2" value="correct"> surface currents
+                <input type="radio" name="question2" value="incorrect"> Coriolis currents
+                <input type="radio" name="question2" value="incorrect"> jet currents
+                <input type="radio" name="question2" value="incorrect"> deep currents
+            </div>
+            <div class="question">
+            <h2>Streamlike movements of ocean water far below the surface are called</h2>
+                <input type="radio" name="question3" value="incorrect"> jet currents
+                <input type="radio" name="question3" value="correct"> deep currents
+                <input type="radio" name="question3" value="incorrect"> surface currents
+                <input type="radio" name="question3" value="incorrect"> Coriolis currents
+            </div>
+            <div class="question">
+            <h2>Most ocean waves are formed by</h2>
+                <input type="radio" name="question4" value="incorrect"> earthquakes
+                <input type="radio" name="question4" value="incorrect"> impacts of cosmic bodies
+                <input type="radio" name="question4" value="incorrect"> landslides
+                <input type="radio" name="question4" value="correct"> wind
+          </div>
+        </div>
+
+        <button id="doneButton">Done</button>
+  
+    </div>
+
+
+  </body>
+
+</html>
+
