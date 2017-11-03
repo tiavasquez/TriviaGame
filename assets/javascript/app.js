@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    $("#questionsSection").hide();
+    $("#doneButton").hide();
+    $("#timeRemaining").hide();
+    $("#results").hide();
     var numCorrect;
     var numIncorrect;
     var unAnswered;
@@ -12,25 +16,39 @@ $(document).ready(function() {
         numCorrect = 0;
         numIncorrect = 0;
         unAnswered = 0;
+        //hide start button
+        $("#startButton").hide();
+        //show questions
+        $("#questionsSection").show();
+        //show time remaining
+        $("#timeRemaining").show();
+        //show done button
+        $("#doneButton").show();
         count = 30;
+        //show how much time they have to start with
+        document.getElementById("timer").innerHTML=count;
         counter=setInterval(timer, 1000); 
     }
      
     function timer() {
         count=count-1;
         if (count <= 0) {
+            //if time runs out, gradetest
             clearInterval(counter);
+            gradeTest();
             return;
-        }
-        document.getElementById("timer").innerHTML=count + " secs"; 
+        }   
+        document.getElementById("timer").innerHTML=count;   
     }    
+    
+    //if they click done, stop timer and gradetest
+    $('#doneButton').on('click', function() {
+        clearInterval(counter);
+        gradeTest();
+    });
+    
 
-    //TODO: if count = 0 OR they click on done button,  gradeTest
-    $('#doneButton').on('click', gradeTest);
-    //TODO: if they click done, gradetest and stop timer
-
-    function gradeTest() {
-        
+    function gradeTest() { 
         var qName;
         //find how many questions there are
         var n =  $("div.question").length;
@@ -54,10 +72,17 @@ $(document).ready(function() {
             }
         } //end of for loop
 
-        alert("#correct: " + numCorrect);
-        alert("#incorrect: " + numIncorrect);
-        alert("#unanswered: " + unAnswered);
+        //show results
+        $("#results").show();
+        document.getElementById("correctCount").innerHTML=numCorrect;
+        document.getElementById("incorrectCount").innerHTML=numIncorrect;
+        document.getElementById("unansweredCount").innerHTML=unAnswered;
         
+        //hide other elements on page
+        $("#questionsSection").hide();
+        $("#doneButton").hide();
+        $("#timeRemaining").hide();
+
     } //end of gradeTest function
 
     
